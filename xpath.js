@@ -22,7 +22,7 @@ describe('Advanced Xpath strategies', () => {
 
     it('Verify error on empty login flow', async () => {
 
-        await browser.url('/');
+        await browser.url('https://www.facebook.com');
         await $('//button[@name="login"]').click();
         const errorMsgDisplayed = await $('//div[contains(text(), "isn’t connected to an account")]').isDisplayed();
         expect(errorMsgDisplayed, 'Error Message is NOT displayed').to.be.true;
@@ -30,7 +30,7 @@ describe('Advanced Xpath strategies', () => {
     
     it('Verify the empty messenger login flow', async () => {
     
-        await browser.url('/');
+        await browser.url('https://www.facebook.com');
 
         await $('//a[text()="Messenger"]').click();
 
